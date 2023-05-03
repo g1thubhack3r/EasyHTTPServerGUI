@@ -31,13 +31,13 @@ def serverrun(topw, host, port, path, content):
         nonlocal content
         return content
     topw.destroy()
-    msgbox.showinfo("Message", "Server is starting")
+    msgbox.showinfo("Message", "Server started")
     try:
         app.run(host=host, port=port, debug=False)
     except Exception as e:
-        msgbox.showerror("Error", "There is an error in the HTTP server: " + str(e))
+        msgbox.showerror("Error", "There is an error in the HTTP server, error message: " + str(e))
     finally:
-        msgbox.showinfo("Message", "Server is stopped")
+        msgbox.showinfo("Message", "Server stopped")
 runbutton = tk.Button(root, text="Run", command=(lambda: serverrun(root, hostvar.get(), int(portvar.get()), path.get(), content.get(1.0, tk.END))))
 runbutton.pack()
 root.mainloop()
