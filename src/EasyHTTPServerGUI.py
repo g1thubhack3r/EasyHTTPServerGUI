@@ -24,16 +24,20 @@ path['textvariable'] = pathvar
 path.pack()
 content = tk.Text(root)
 content.pack()
-def serverrun(host, port, path, content):
+def serverrun(topw, host, port, path, content):
     app = flask.Flask(__name__)
     @app.route(path)
     def index():
         nonlocal content
         return content
+    topw.destroy()
+    msgbox.showinfo("Message", "Server is starting")
     try:
         app.run(host=host, port=port, debug=False)
     except Exception as e:
         msgbox.showerror("Error", "There is an error in the HTTP server: " + str(e))
-runbutton = tk.Button(root, text="Run", command=(lambda: serverrun(hostvar.get(), int(portvar.get()), path.get(), content.get(1.0, tk.END))))
+    finally:
+        msgbox.showinfo("Message", "Server is stopped")
+runbutton = tk.Button(root, text="Run", command=(lambda: serverrun(root, hostvar.get(), int(portvar.get()), path.get(), content.get(1.0, tk.END))))
 runbutton.pack()
 root.mainloop()
