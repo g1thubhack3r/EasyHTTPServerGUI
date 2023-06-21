@@ -1,4 +1,4 @@
 Why the application outputed something liked this: 'An attempt was made to access the socket in a way that access permissions did not allow'?
 Please check your OS' error diagnosis and turn on the permission of access the socket.
 The application reported another error, how can I solve this?
-Please contact me at 125267748+g1thubhack3r@users.noreply.github.com, I will help you yo solve the error and I will added it to this file.
+Please contact me at 125267748+g1thubhack3r@users.noreply.github.com, I will help you solve the error and I will added it to this file.
